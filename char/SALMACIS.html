@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="char.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+          <div class="logo"><img class="logo" src="characters/logo3.png" alt="Logo"></div>
+          <ul>
+            <li><a  href="/home.html">HOME</a></li>
+            <li><a href="/events.html">EVENTS</a></li>
+            <li><a class="active" href="/characters.html">CHARACTERS</a></li>
+            <li><a href="/gallery.html">GALLERY</a></li>
+            <li><a href="/#about">ABOUT US</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="myFunction()">
+            <a href="#bars"><i class="fa fa-bars"></i></a>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="characters/Water_Nymph_Salmacis.jpg" >
+                </div>
+                <div class="home-content">
+                    <h1 class="h11">SALMACIS</h1>
+                    <p class="pp">
+                        In Greek mythology, Salmacis is a nymph who is most famously associated with the myth of Hermaphroditus, a story that explores themes of love, desire, and transformation. Salmacis was a water nymph who resided in a fountain or spring, often described as beautiful and enticing but also somewhat vain and self-absorbed. Her tale is most notably recounted in Ovid’s Metamorphoses, where it serves as a cautionary and bittersweet story about unrequited love and the blending of identities.
+                        <br><br>
+                        The myth of Salmacis and Hermaphroditus begins when the young and handsome god Hermaphroditus, the son of Hermes and Aphrodite, was wandering through the forest. He was described as a beautiful youth with both male and female characteristics, though he was not yet fully aware of his dual nature. Salmacis, upon seeing him, fell deeply in love and desired him immediately. She approached him with seductive words and attempted to win his affection, but Hermaphroditus was not interested and tried to resist her advances.
+                        <br><br>
+                        Determined to possess him, Salmacis prayed to the gods to make them never separate. Her wish was granted when she embraced him in the water of her spring, and their bodies were fused together, creating a single being with both male and female traits. This transformation symbolized the union of their identities, merging them into what would later be known as hermaphrodites—beings who possess both male and female physical characteristics.
+                        <br><br>
+                        The story of Salmacis and Hermaphroditus has been interpreted in various ways throughout history, often serving as an allegory for the complex nature of gender and the blending of opposites. The fountain where this transformation occurred was said to have retained the magical property of imparting its power to others who bathed in it, and it became associated with the myth’s theme of metamorphosis and the merging of identities.
+                        </p>
+                    </div>
+               
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="MINOTAUR.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="MEDUSA.html">Back</a></button>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-70px";
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="char.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+          <div class="logo"><img class="logo" src="characters/logo3.png" alt="Logo"></div>
+          <ul>
+            <li><a  href="/home.html">HOME</a></li>
+            <li><a href="/events.html">EVENTS</a></li>
+            <li><a class="active" href="/characters.html">CHARACTERS</a></li>
+            <li><a href="/gallery.html">GALLERY</a></li>
+            <li><a href="/#about">ABOUT US</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="myFunction()">
+            <a href="#bars"><i class="fa fa-bars"></i></a>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="characters/zeus.webp" >
+                </div>
+                
+                <div class="home-content">
+                    <h1 class="h11">ZEUS</h1>
+                    <p class="pp">Zeus, the king of the gods in ancient Greek religion and mythology, was the supreme deity ruling from Mount Olympus. He was associated with the sky and thunder, embodying the power of storms and the authority of the divine realm. The name Zeus is etymologically related to the first syllable of his Roman counterpart, Jupiter.
+                        <br><br>
+                        Zeus was the son of Cronus and Rhea, and while he was technically the youngest of his siblings, he is sometimes considered the eldest because he was the last to be born, following his siblings' rescue from Cronus's stomach. He was most commonly married to Hera, with whom he fathered several deities, including Ares, Eileithyia, Hebe, and Hephaestus. However, other myths attribute different consorts and offspring to him. For instance, at the oracle of Dodona, Zeus was said to have been united with Dione, and together they were believed to have fathered Aphrodite. Additionally, in Hesiod's Theogony, Zeus’s first wife, Metis, gave birth to Athena after Zeus swallowed her to prevent a prophecy that her offspring would overthrow him.
+                        <br><br>
+                        Zeus’s mythos is renowned for his numerous liaisons and affairs, which resulted in a vast lineage of both divine and heroic offspring. Among them were Apollo and Artemis, Hermes, Persephone, Dionysus, Perseus, Heracles, Helen of Troy, Minos, and the Muses.
+                        <br><br>
+                        As the chief of the gods, Zeus commanded respect and reverence, with even deities who were not his direct offspring addressing him as "Father." It was customary for all the gods to rise in his presence, underscoring his supreme status in the divine hierarchy. His influence extended beyond Greece; Pausanias noted that the saying "Zeus is king in heaven" was widely recognized across different cultures. Zeus was often equated with similar sky gods from other ancient traditions. His most enduring symbols were the thunderbolt, the eagle, the bull, and the oak. In addition to his Indo-European heritage, Zeus’s iconography, particularly the scepter, reflects influences from the ancient Near East, highlighting his universal aspect as the god of the sky and storms, known as Nephelēgereta ("cloud-gatherer").</p>
+                </div>
+               
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="HEPHAEUTUS.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="PROMETHEUS.html">Back</a></button>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-70px";
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>

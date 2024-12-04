@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="char.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+          <div class="logo"><img class="logo" src="characters/logo3.png" alt="Logo"></div>
+          <ul>
+            <li><a  href="/home.html">HOME</a></li>
+            <li><a href="/events.html">EVENTS</a></li>
+            <li><a class="active" href="/characters.html">CHARACTERS</a></li>
+            <li><a href="/gallery.html">GALLERY</a></li>
+            <li><a href="/#about">ABOUT US</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="myFunction()">
+            <a href="#bars"><i class="fa fa-bars"></i></a>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="characters/echo-and-narcissus-greek-myth.jpeg" >
+                </div>
+                <div class="home-content">
+                    <h1 class="h11">ECHO</h1>
+                    <p class="pp">
+                        In Greek mythology, Echo (Ancient Greek: Ἠχώ, romanized: Ēkhō) is a nymph known for her tragic love story and the origin of the echo phenomenon. Echo was a mountain nymph, or oceanid, who served as a companion to Hera, the wife of Zeus. She was known for her beauty and her talent for conversation, which led to her downfall when she was cursed by Hera.
+                        <br><br>
+                        Echo's story begins with her role as a talkative nymph who used her voice to distract Hera while Zeus engaged in his affairs with other nymphs. Hera, angry at Echo for her deceitful behavior, punished her by taking away her ability to speak independently. Instead, Echo was cursed to only repeat the last words spoken to her. This punishment condemned her to a life of solitude and unfulfilled love, as she could no longer express her own thoughts and feelings.
+                        <br><br>
+                        Echo’s tragic fate was sealed when she fell in love with Narcissus, a handsome young man known for his beauty and vanity. Echo was smitten by him, and when she tried to approach and speak to him, he rejected her coldly. Heartbroken and unable to express her feelings, Echo retreated to the forest, where she pined away for Narcissus. Eventually, her physical form faded until only her voice remained, echoing in the mountains and valleys. This is said to be the reason why echoes are heard today—her voice repeating the sounds of the world around her.
+                        <br><br>
+                        Echo's story is rich with symbolism and themes, including unrequited love, the pain of isolation, and the consequences of vanity. It serves as a reminder of the power of words and the human need for connection and expression. Echo’s presence in the myth also adds depth to the tale of Narcissus, highlighting how his rejection of love, both from Echo and from others, leads to his tragic end. The myth of Echo and Narcissus has been retold and reinterpreted through literature, art, and psychology, where "echo" has become synonymous with the repetition of sound and the lingering effects of unfulfilled desires.
+                        </p>
+                    </div>
+               
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="IPHIGENIA.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="NARCISSUS.html">Back</a></button>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-70px";
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>

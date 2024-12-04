@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="char.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+            <div class="logo"><img class="logo" src="characters/logo3.png" alt="Logo"></div>
+            <ul>
+                <li><a  href="/home.html">HOME</a></li>
+                <li><a href="/events.html">EVENTS</a></li>
+                <li><a class="active" href="/characters.html">CHARACTERS</a></li>
+                <li><a href="/gallery.html">GALLERY</a></li>
+                <li><a href="/#about">ABOUT US</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="myFunction()">
+                <a href="#bars"><i class="fa fa-bars"></i></a>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+    
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="characters/achilles-the-greek-hero.jpeg">
+                </div>
+
+                <div class="home-content">
+                    <h1 class="h11">ACHILLES</h1>
+                    <p class="pp">
+                        Achilles, known as Ἀχιλλεύς (Achilleús) in Ancient Greek, was one of the most celebrated heroes
+                        of Greek mythology and is central to Homer’s Iliad. Renowned as the greatest of the Greek
+                        warriors during the Trojan War, he was the son of the sea nymph Thetis and Peleus, the king of
+                        Phthia and a notable Argonaut. Achilles grew up in Phthia, where he was educated by the wise
+                        centaur Chiron and spent his early years with his close friend and companion, Patroclus.
+                        <br><br>
+                        In the Iliad, Achilles leads the Myrmidons, a fierce and loyal tribe, and is depicted as a
+                        figure of immense strength and prowess. His most famous act during the Trojan War was the
+                        killing of Hector, the Trojan prince and the champion of Troy, outside the city gates. This
+                        battle was a defining moment in the epic, showcasing Achilles’s skill in combat and his deep
+                        capacity for both rage and grief. However, the Iliad does not cover Achilles’s death, and other
+                        ancient sources tell us that he met his end near the conclusion of the Trojan War when Paris,
+                        the prince of Troy, shot him with an arrow, often said to have been guided by the god Apollo to
+                        strike Achilles in his only vulnerable spot—his heel.
+                        <br><br>
+                        The myth of Achilles’ vulnerability stems from a story that his mother, Thetis, dipped him in
+                        the river Styx as an infant, intending to make him invulnerable. However, she held him by his
+                        heel, which did not touch the water and remained susceptible to injury. This led to the later
+                        legend that Achilles was impervious everywhere except for his heel, which ultimately became his
+                        downfall. This story gave rise to the phrase Achilles' heel, referring to a critical weakness in
+                        an otherwise strong individual or system. The tendon that connects the calf muscles to the heel
+                        is known as the Achilles tendon, named after him and linked to the same myth.
+                        <br><br>
+                        Achilles’s legacy endures as a symbol of unmatched heroism and tragic vulnerability, resonating
+                        in literature, art, and language as the embodiment of both the greatest strength and the
+                        greatest weakness.
+                    </p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="characters/PATROCLUS.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="characters/HELEN.html">Back</a></button>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-70px";
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

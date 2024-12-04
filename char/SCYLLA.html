@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="char.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+          <div class="logo"><img class="logo" src="characters/logo3.png" alt="Logo"></div>
+          <ul>
+            <li><a  href="/home.html">HOME</a></li>
+            <li><a href="/events.html">EVENTS</a></li>
+            <li><a class="active" href="/characters.html">CHARACTERS</a></li>
+            <li><a href="/gallery.html">GALLERY</a></li>
+            <li><a href="/#about">ABOUT US</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="myFunction()">
+            <a href="#bars"><i class="fa fa-bars"></i></a>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="characters/scylla.jpg" >
+                </div>
+                <div class="home-content">
+                    <h1 class="h11">SCYLLA</h1>
+                    <p class="pp">
+                        In Greek mythology, Scylla is a monstrous sea creature known for her terrifying appearance and her role as a formidable obstacle that sailors had to face. She is most famously depicted in Homer's Odyssey, where she is part of a pair of sea monsters that threaten the journey of Odysseus as he makes his way home to Ithaca. Scylla’s counterpart, Charybdis, is a giant whirlpool that devours everything in its path, creating a deadly strait that sailors must navigate.
+                        <br><br>
+                        Scylla is described as having twelve legs and six heads, each with three rows of sharp teeth. Her monstrous form and predatory nature make her a fearsome sight. In some versions of the myth, Scylla is said to have once been a beautiful nymph who was transformed into a monster by Circe, the sorceress, out of jealousy. According to this version, Circe was angry that Glaucus, a sea god, had fallen in love with Scylla and not with her. In other versions, Scylla’s monstrous form is attributed to different divine influences or punishments, emphasizing her status as an embodiment of danger and chaos.
+                        <br><br>
+                        In Homer’s Odyssey, Scylla lives on one side of the strait between Sicily and Italy, while Charybdis lies on the other. Odysseus must choose between the two perils when he sails through this treacherous area. He decides to steer closer to Scylla, knowing that although she will attack and take some of his men, it is a less catastrophic choice than risking the entire ship in the maelstrom created by Charybdis. This choice underscores the theme of difficult decision-making and the need to choose the lesser of two evils, a recurring element in Odysseus’s journey.
+                        <br><br>
+                        Scylla is not just a symbol of physical danger but also represents the unpredictable and uncontrollable forces of nature that sailors must face. She embodies the dual nature of the sea as both a source of life and adventure and a realm filled with deadly, unknowable threats. In literature and art, Scylla has been depicted in various forms, often highlighted for her monstrous and frightening features. She serves as a reminder of the perilous voyage that is life itself, illustrating themes of courage, sacrifice, and the struggle against insurmountable challenges.
+                        </p>
+                    </div>
+               
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="CHARYBDIS.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="SIRENS.html">Back</a></button>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-70px";
+            } else {
+                navbar.style.top = "0";
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>

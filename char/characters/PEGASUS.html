@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: #333;
+        margin: 0;
+        background-image: url("creatbg.jpg");
+        background-size: cover;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    section{
+        min-height: 100vh;
+        padding: 6rem 9% 5rem;
+        margin: 40px 40px;
+        padding: 15px;
+        border: 1px solid #885f06;
+        border-radius: 5px;
+        background-color: #504900de;
+        height: auto;
+        box-shadow: 0px 0px 20px 2px;
+        
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background:#0000008a;
+        border-radius: 0px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border-width: 30px;
+        border-image-width:7px;
+        border-image-source: url("pngtree-smoke-thick-smoke-colorful-horizontal-illustration-black-border-png-image_6274275.png");
+        border-image-slice: 100;
+        border-image-repeat: repeat;
+        margin: 100px 150px;
+    }
+    s  {
+        border: rgb(0, 0, 0) solid 2px;
+    }
+    .home .home-content h1{
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    
+    span{
+        color: #b74b4b;
+    }
+    .home-content {
+        
+        margin: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .home-content h3{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    
+    .home-content p{
+        font-size: 10p;
+        text-align: justify;
+    }
+
+    
+    .home-img img{
+        position: relative;
+        background-position: cover;
+        border-width:1px;
+        border-style: solid ;
+        border-image-outset: 3;
+        border-image-width: 9px;
+        border-image-source: url("pngtree-smoke-thick-smoke-colorful-horizontal-illustration-black-border-png-image_6274275.png");
+        border-image-slice:100;
+        border-image-repeat: repeat;
+        margin: -2px;
+        width: 20vw;
+        box-shadow: 0 0 25px solid #b74b4b;
+        cursor: pointer;
+        transition: 0.2s linear;
+    }
+    
+    .home-img img:hover{
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    .h11 {
+        color: white;
+    }
+    .pp {
+        color: white;
+    }
+/* Button */
+    /* Right */
+    .bright {
+        border-width: 4px;
+        border-style: solid;
+        border-image-outset: 2;
+        border-image-width: 3px;
+        border-image-source: url("pngtree-smoke-thick-smoke-colorful-horizontal-illustration-black-border-png-image_6274275.png");
+        border-image-slice: 100;
+        border-image-repeat: repeat;
+        cursor: pointer;
+        position: relative;
+        width: 70px;
+        top: -40px;
+        left: -20px;
+        background-color: transparent;
+        font-family:monospace;
+        color: #000000fa;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(1px);
+    }
+    .button-container-right {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+
+    .bright a {
+        color: inherit; 
+        text-decoration: none; 
+    }
+    /* Left */
+    .bleft {
+        border-width: 4px;
+        border-style: solid;
+        border-image-outset: 2;
+        border-image-width: 3px;
+        border-image-source: url("pngtree-smoke-thick-smoke-colorful-horizontal-illustration-black-border-png-image_6274275.png");
+        border-image-slice: 100;
+        border-image-repeat: repeat;
+        cursor: pointer;
+        position: relative;
+        width: 70px;
+        top: -80.5px;
+        right: -20px;
+        background-color: transparent;
+        font-family:monospace;
+        color:#000000;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(1px);
+    }
+    .button-container-left {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    .bleft a {
+        color: inherit; 
+        text-decoration: none; 
+    }
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgb(27, 14, 3);
+    height: 70px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.527);
+    z-index: 1000;
+    transition: top 0.7s;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav ul li {
+    margin: 0px;
+}
+
+
+nav a {
+    color: #ffeecf;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 50px;
+}
+
+
+nav a:hover {
+    background: linear-gradient(45deg, #d3ab80, #946e4f);
+    color: #000;
+    transition: background 1s ease, color 0.5s ease;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: -25px;
+    padding-right: -25px;
+}
+
+
+nav a.active {
+    background: linear-gradient(45deg, #d3ab80, #946e4f);
+    color: #000;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: -25px;
+    padding-right: -25px;
+}
+
+
+.logo {
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+
+.menu-toggle span {
+    width: 30px;
+    height: 10px;
+    background-color: #ffeecf;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    nav ul li {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    nav.open ul {
+        display: block;
+    }
+    nav.open .menu-toggle span:nth-child(1) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 9px;
+    }
+    nav.open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    nav.open .menu-toggle span:nth-child(3) {
+        transform: rotate(45deg);
+        position: relative;
+        top: -9px;
+    }
+    .button {
+        font-size: 4vw;
+        padding: 25px 50px;
+    }
+}
+.fa-bars {
+    color: #ffeecf;
+    font-size: 20px;
+}
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+.topnav #myLinks {
+    display: none;
+}
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+.topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+#myLinks {
+    display: none;
+    padding: -20px;
+    margin: -20px;
+    font-size: 1px;
+}
+#myLinks a {
+    font-size: 12px;
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+@media(max-width:480px){
+    .home{
+        flex-direction: column;
+        margin: 4rem 1rem;
+    }
+
+    .home .home-content h3{
+        font-size: 1rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+</style>
+<body>
+    <nav id="navbar">
+        <div class="navdiv">
+            <div class="logo"><img class="logo" src="logo3.png" alt="Logo"></div>
+            <ul>
+                <li><a class="active" href="#intro">HOME</a></li>
+                <li><a href="#events">EVENTS</a></li>
+                <li><a href="#characters">CHARACTERS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+            </ul>
+            <div id="myLinks">
+                <a href="#events">EVENTS</a>
+                <a href="#characters">CHARACTERS</a>
+                <a href="#gallery">GALLERY</a>
+            </div>
+            <div class="menu-toggle" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <main>
+            <section class="home">
+                <div class="home-img">
+                    <img src="Pegasus-Greek-mythology.jpg" >
+                </div>
+                <div class="home-content">
+                    <h1 class="h11">PEGASUS</h1>
+                    <p class="pp">
+                        In Greek mythology, Pegasus is one of the most famous mythical creatures, known as a divine, winged horse. He is often associated with purity, beauty, and the power of flight. Pegasus first sprang from the blood of Medusa when she was slain by Perseus. According to the myth, when Perseus decapitated Medusa, her blood spattered onto the earth, and from it emerged both Pegasus and Chrysaor, a warrior with a golden sword. Pegasus’s birth symbolizes the miraculous and mystical nature of the divine and supernatural.
+                        <br><br>
+                        Pegasus is most closely associated with the hero Bellerophon, who tamed him with the help of Athena. The goddess provided Bellerophon with a golden bridle, enabling him to control the wild, winged horse. Bellerophon and Pegasus’s most famous adventure was their battle against the Chimera, a fire-breathing monster with the body of a lion, the head of a goat, and a serpent for a tail. Bellerophon rode Pegasus and struck the Chimera from the air, using his skill and the horse's flying ability to defeat the creature and prove his heroism. This story emphasized themes of courage, divine favor, and triumph over monstrous challenges.
+                        <br><br>
+                        Pegasus also played a significant role in later myths and legends. After his adventures with Bellerophon, the winged horse’s fate diverged in different tales. In some versions, Pegasus was cast into the sky by Zeus, who turned him into a constellation. This placement among the stars symbolized immortality and divine favor. In other stories, Pegasus was said to have created the fountain of Hippocrene on Mount Helicon when he struck his hoof against the rock, bringing forth a source of poetic inspiration. This act linked him to the muses and the realm of art and creativity, making Pegasus a symbol of inspiration and a reminder of the power of flight and freedom.
+                        <br><br>
+                        Art and literature throughout history have kept Pegasus as a powerful symbol of beauty, grace, and the potential for greatness. His image has been portrayed in countless forms—from ancient Greek pottery and sculptures to modern literature and film—where he continues to captivate audiences as an emblem of divine and transcendent qualities. Pegasus embodies the aspirational ideals of freedom, heroism, and the boundless potential of the imagination. The story of Pegasus also suggests that greatness is achieved through divine intervention and the harmonious partnership between mortals and the gods.
+                        </p>
+                    </div>
+               
+            </section>
+        </main>
+    </div>
+    <div class="button-container-right">
+        <button class="bright"><a href="MEDUSA.html">Next</a></button>
+    </div>
+    <div class="button-container-left">
+        <button class="bleft"><a href="CHIMERA.html">Back</a></button>
+    </div>
+    <script src="script.js"></script>
+</body>

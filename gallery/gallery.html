@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Gallery_1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-image: url('gallery/bgf.jpg');
+            background-size: 100% 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        section {
+            flex-grow: 1;
+            padding-bottom: 70px;
+        }
+
+        section {
+            margin-top: 50px;
+        }
+
+        /*!!! NAVBAR !!!*/
+        nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(49, 30, 12, 0.911);
+    height: 70px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.527);
+    z-index: 1000;
+    transition: top 0.7s;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+.navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0px;
+}
+
+nav a {
+    color: #ffeecf;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 50px;
+}
+
+nav a:hover {
+    background: linear-gradient(45deg, #d3ab80, #946e4f);
+    color: #000;
+    transition: background 1s ease, color 0.5s ease;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: -25px;
+    padding-right: -25px;
+}
+
+nav a.active {
+    background: linear-gradient(45deg, #d3ab80, #946e4f);
+    color: #000;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: -25px;
+    padding-right: -25px;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 10px;
+    background-color: #ffeecf;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#myLinks {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
+    overflow: hidden;
+    background-color: #362617;
+}
+
+#myLinks a:active {
+    background-color: #a17d60;
+}
+
+#myLinks {
+    display: none;
+    padding: -20px;
+    margin: -20px;
+    font-size: 1px;
+    margin-top: -80px;
+    padding-top: 100px;
+    padding-bottom: 25px;
+    background-color:#362617;
+}
+
+#myLinks a {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    color: #ffeecf;
+}
+
+.fa-bars {
+    color: #ffeecf;
+    font-size: 20px;
+}
+
+
+        .bgimg {
+            background-image: url(bg102.webp);
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .gal-main {
+            margin-left: 300px;
+        }
+
+        .gal-row-padding {
+            margin-bottom: 15px;
+        }
+
+        .gal-container {
+            padding: 15px;
+        }
+
+        .gal-hover-opacity {
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .gal-hover-opacity:hover {
+            opacity: 1;
+        }
+
+        .gal-third {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(133, 72, 54, 0.5));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+
+
+        @media (max-width: 768px) {
+
+            nav ul {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: block;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav.open ul {
+                display: block;
+            }
+
+            nav.open .menu-toggle span:nth-child(1) {
+                transform: rotate(-45deg);
+                position: relative;
+                top: 9px;
+            }
+
+            nav.open .menu-toggle span:nth-child(2) {
+                opacity: 0;
+            }
+
+            nav.open .menu-toggle span:nth-child(3) {
+                transform: rotate(45deg);
+                position: relative;
+                top: -9px;
+            }
+
+            .image-container {
+                margin-bottom: 10px;
+            }
+        }
+
+
+        @media screen and (max-width: 480px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.open ul {
+        display: block;
+    }
+
+    nav.open .menu-toggle span:nth-child(1) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 9px;
+    }
+
+    nav.open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav.open .menu-toggle span:nth-child(3) {
+        transform: rotate(45deg);
+        position: relative;
+        top: -9px;
+    }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.open ul {
+        display: block;
+    }
+
+    nav.open .menu-toggle span:nth-child(1) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 9px;
+    }
+
+    nav.open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav.open .menu-toggle span:nth-child(3) {
+        transform: rotate(45deg);
+        position: relative;
+        top: -9px;
+    }
+}
+
+        .overlay-text {
+            color: #ffeecf;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #251815;
+            color: #ffeecf;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            padding-top: 70px;
+        }
+
+        .social-links {
+            text-align: center;
+        }
+
+        .social-links .fa {
+            height: 40px;
+            width: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            border: 1px solid #251815;
+            margin: 15px 5px 0;
+            color: #854836;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .social-links .fa:hover {
+            background: transparent;
+            color: #fff;
+            transform: translate(2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav id="navbar">
+            <div class="navdiv">
+                <div class="logo"><img class="logo" src="events/logo3.png" alt="Logo"></div>
+                <ul>
+                    <li><a  href="home.html">HOME</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="characters.html">CHARACTERS</a></li>
+                    <li><a class="active" href="gallery.html">GALLERY</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="myFunction()">
+                    <a href="#bars"><i class="fa fa-bars"></i></a>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="myLinks">
+        <a href="home.html">HOME</a>
+        <a href="events.html">EVENTS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="#about">ABOUT US</a>
+    </div>
+
+
+
+
+        <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+            <div class="w3-display-middle">
+                <h1 class="w3-jumbo w3-animate-top">Gallery</h1>
+                <hr class="w3-border-grey" style="margin:auto;width:40%">
+                <p class="w3-large w3-center">Greek Mythology</p>
+            </div>
+        </div>
+
+        <section>
+
+            <div class="w3-third w3-container w3-margin-bottom">
+                <div class="image-container">
+                    <img src="gallery/Odyssey.jpg" alt="Odyssey" class="w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text">The Odyssey</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-container">
+                <div class="image-container">
+                    <img src="gallery/Trojan-War.jpg" alt="Trojan War" class="w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text">The Trojan War</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="w3-third w3-container w3-margin-bottom">
+                <div class="image-container">
+                    <img src="gallery/the Clash of the Titans.jpg" alt="Theogony: Clash of the Titans"
+                        class="w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text"> Theogony: Clash of the Titans</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/Apple-of-Discord.jpg" alt="Apple of Discord" class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">Apple of Discord</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/King-Midas-and-his-golden-touch.jpg" alt="King Midas"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">King Midas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container">
+                    <div class="image-container">
+                        <img src="gallery/myths Andromeda.jpg" alt="Andromeda" class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Myth of Andromeda and Perseus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/Bellorophon-and-Pegasus.jpg" alt="Bellorophon and Pegasus"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">Bellorophon and Pegasus</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/myths Hermaphroditus.jpg" alt="Hermaphroditus" class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Myth of Hermaphroditus</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container">
+                    <div class="image-container">
+                        <img src="gallery/Echo-and-Narcissus-myth.jpg" alt="Echo and Narcissus"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Myth of Narcissus and Echo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/Athena-and-Arachne.jpg" alt="Goddess Athena and Arachne"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">Goddess Athena and Arachne</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/Apollo-and-Daphne.jpg" alt="The Myth of Apollo and Daphne"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Myth of Apollo and Daphne</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container">
+                    <div class="image-container">
+                        <img src="gallery/12 labors Hercules-and-the-Nemea-Lion.jpg" alt="The 12 Labors of Hercules"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The 12 Labors of Hercules</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/2 The Love Story of Eros and Psyche.jpg"
+                            alt="The Love Story of Eros and Psyche" class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Love Story of Eros and Psyche</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="image-container">
+                        <img src="gallery/Perseus-and-Medusa.jpg" alt="Hermaphroditus" class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">Perseus and the Gorgon Medusa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-container">
+                    <div class="image-container">
+                        <img src="gallery/The Myth of King Aegeus.jpg" alt="The Myth of King Aegeus"
+                            class="w3-hover-opacity">
+                        <div class="overlay">
+                            <div class="overlay-text">The Myth of King Aegeus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-container w3-margin-bottom">
+                <div class="image-container">
+                    <img src="gallery/The Myth of Sisyphus and his Eternal Punishment.jpg"
+                        alt="The Myth of Sisyphus and his Eternal Punishment" class="w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text"> The Myth of Sisyphus and his Eternal Punishment</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-container">
+                <div class="image-container">
+                    <img src="gallery/Τhe Three Sisters of Fate.jpg" alt="Τhe Three Sisters of Fate class="
+                        w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text">Τhe Three Sisters of Fate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-container w3-margin-bottom">
+                <div class="image-container">
+                    <img src="gallery/Theseus and the Minotaur.jpg" alt="Theseus and the Minotaur"
+                        class="w3-hover-opacity">
+                    <div class="overlay">
+                        <div class="overlay-text">Theseus and the Minotaur</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Greek Mythology. All Rights Reserved.</p>
+            <div class="social-links">
+            <a href="https://www.facebook.com/denmarklee.clacio.121/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://x.com/home" target="_blank"><i class="fa fa-twitter"></i></a>
+        </div>
+        </footer>
+
+        <script>
+            let lastScrollTop = 0;
+            const navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", function () {
+                let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (currentScroll > lastScrollTop) {
+                    navbar.style.top = "-70px";
+                } else {
+                    navbar.style.top = "0";
+                }
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            });
+
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+        </script>
+    </body>
+
+</html>
